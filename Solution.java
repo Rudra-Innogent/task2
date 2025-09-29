@@ -74,7 +74,7 @@ class Solution{
 	System.out.println();
 	
 	System.out.println("after sorting using Comparator => ");
-	emp.sort(CompareatorSorting.sortByAll);
+	emp.sort(CompareatorSorting.sortingData);
 	show(emp);	
 	System.out.println();
 
@@ -96,7 +96,7 @@ class Solution{
 }
 class CompareatorSorting{
 	
-			static final Comparator<Employee> sortByAll = (i,j)-> {
+			static final Comparator<Employee> sortingData = (i,j)-> {
                 
                 int deptComp = i.getDepartment().compareTo(j.getDepartment());
                 if (deptComp != 0) return deptComp;
