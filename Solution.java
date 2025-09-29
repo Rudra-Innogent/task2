@@ -6,7 +6,6 @@ class Employee implements Comparable<Employee>{
 		int id;
 		String department;
 		double salary;
-		Employee emp;
 		
 		Employee(int id, String name, String department, double salary){
 		this.name=name;
