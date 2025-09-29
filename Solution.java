@@ -1,5 +1,5 @@
 import java.util.*;
-class Employee implements Comparable{
+class Employee implements Comparable<Employee>{
 		
 		static Employee e1;
 		String name;
@@ -35,11 +35,8 @@ class Employee implements Comparable{
 		return "[ name = "+name+"\t id = "+id+"\t department = "+department +"\t salary = "+salary+" ]";
 		}
 		
-        public int compareTo(Object o) {
-       if(o instanceof Employee)
-	   {
-		   emp=(Employee)o;
-		   } 
+        public int compareTo(Employee emp) {
+       
         int deptCmp = this.department.compareTo(emp.department);
         if (deptCmp != 0) return deptCmp;
 
@@ -99,19 +96,17 @@ class Solution{
 }
 class CompareatorSorting{
 	
-			static final Comparator<Employee> sortByAll = new Comparator<Employee>() {
-           
-            public int compare(Employee i, Employee j) {
+			static final Comparator<Employee> sortByAll = (i,j)-> {
                 
-                int deptCompare = i.getDepartment().compareTo(j.getDepartment());
-                if (deptCompare != 0) return deptCompare;
+                int deptComp = i.getDepartment().compareTo(j.getDepartment());
+                if (deptComp != 0) return deptComp;
 
-                int nameCompare = i.getName().compareTo(j.getName());
-                if (nameCompare != 0) return nameCompare;
+                int nameComp = i.getName().compareTo(j.getName());
+                if (nameComp != 0) return nameComp;
 
                 if (i.getSalary() < j.getSalary()) return 1;
-                if (i.getSalary() > j.getSalary()) return -1;
+                else if (i.getSalary() > j.getSalary()) return -1;
                 return 0;
-            }
-        };
+            };
+        
 }
