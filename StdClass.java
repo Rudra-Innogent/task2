@@ -1,4 +1,4 @@
-class StdClass {
+public class StdClass {
     private int id;
     private String className;
     public StdClass(int id, String className) 

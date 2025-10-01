@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.function.Predicate;
 
-class StudentManagementSystem 
+public class StudentManagementSystem 
 {
     Map<Integer, StdClass> classes = new HashMap<>();
     Map<Integer, List<Student>> studentsByClass = new HashMap<>();

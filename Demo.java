@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.util.function.Predicate;
 
@@ -21,28 +22,40 @@ public class Demo
                     try {
                         System.out.print("Enter Student ID: ");
                         int stdId = Integer.parseInt(sc.nextLine().trim());
+						
                         System.out.print("Enter Name: ");
                         String name = sc.nextLine().trim();
+						
                         System.out.print("Enter Gender: ");
                         String gender = sc.nextLine().trim();
+						
                         System.out.print("Enter Marks: ");
                         int marks = Integer.parseInt(sc.nextLine().trim());
+						
                         System.out.print("Enter Age: ");
                         int age = Integer.parseInt(sc.nextLine().trim());
+						
                         if (age > 20) { System.out.println("Age exceeds limit 20. Student not created."); break; }
                         System.out.print("Enter Class Name: ");
+						
                         String className = sc.nextLine().trim();
                         Integer classId = sms.getClassIdByName(className);
+						
                         if (classId == null) { System.out.println("Class not found."); break; }
                         Student student = new Student(stdId, name, classId, marks, age, gender);
+						
                         System.out.print("Enter Address ID: ");
                         int addrId = Integer.parseInt(sc.nextLine().trim());
+						
                         System.out.print("Enter Pincode: ");
                         int pincode = Integer.parseInt(sc.nextLine().trim());
+						
                         System.out.print("Enter City: ");
                         String city = sc.nextLine().trim();
+						
                         Address addr = new Address(addrId, pincode, city, stdId);
                         boolean added = college.addStudent(student, addr);
+						
                         if (added) System.out.println("Student added successfully!"); else System.out.println("Failed to add student (duplicate id or class missing).");
                     } catch (IllegalArgumentException e) { System.out.println(e.getMessage()); }
                     break;

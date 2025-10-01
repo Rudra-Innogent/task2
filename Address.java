@@ -1,4 +1,5 @@
-class Address 
+
+public class Address 
 {
     private int addressId;
     private int pincode;

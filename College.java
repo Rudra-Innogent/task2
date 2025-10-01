@@ -1,5 +1,6 @@
+
 import java.util.*;
-class College 
+public class College 
 {
     private StudentManagementSystem sms;
 	

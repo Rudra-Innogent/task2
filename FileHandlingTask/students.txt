@@ -1,0 +1,9 @@
+11,Tanya,20,F,100.0,C2,Lko,226203,Pass,1
+1,rajat,19,M,100.0,C3,LKO,454543,Pass,2
+12,Abhinav,11,M,45.0,C2,Bhopal,45907,Pass,0
+2,Rajneesh,10,M,99.0,C1,Harda,26789,Pass,4
+3,Jyoti,20,F,100.0,C2,Banaras,90862,Pass,3
+5,Parul,17,F,47.0,C3,Indore,452001,Pass,8
+6,Rudra,16,M,75.0,C1,Lko,227205,Pass,6
+7,Anurag,15,M,67.0,C3,Lko,227205,Pass,7
+9,Raghav,14,M,85.0,C3,Dhamnod,316890,Pass,5
