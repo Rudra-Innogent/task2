@@ -12,8 +12,8 @@ class StudentManagementSystem
         classes.put(1, new StdClass(1, "BCA"));
         classes.put(2, new StdClass(2, "MCA"));
         classes.put(3, new StdClass(3, "BBA"));
-        classes.put(3, new StdClass(3, "BSC"));
-        classes.put(3, new StdClass(3, "B.tech"));
+        classes.put(4, new StdClass(4, "BSC"));
+        classes.put(5, new StdClass(5, "B.tech"));
     }
 
     public Integer getClassIdByName(String name) 
