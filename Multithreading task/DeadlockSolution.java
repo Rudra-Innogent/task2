@@ -117,8 +117,8 @@ class DeadlockSolution {
 		Lock lock=new ReentrantLock();
 		A a=new A();
 		B b=new B();
-		C c=new C(a,b,lock);//passing a1 and b1 this way if C-thread runs first it will lock a1 and b1 object respectively
-		D d=new D(a,b,lock);// passing same a1 and b1 object, D-thread runs first it will lock a1 and b1 objects respectively  
+		C c=new C(a,b,lock);
+		D d=new D(a,b,lock);  
 		c.start();
 	    d.start();
 		System.out.println("main method");
