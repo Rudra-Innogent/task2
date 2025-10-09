@@ -51,7 +51,7 @@ class Consumer implements Runnable {
         }
     }
 }
-class Demo {
+class ProducerConsumer {
     public static void main(String[] args) {
         List<Integer> buffer=new ArrayList<>();
         int capacity=25;
