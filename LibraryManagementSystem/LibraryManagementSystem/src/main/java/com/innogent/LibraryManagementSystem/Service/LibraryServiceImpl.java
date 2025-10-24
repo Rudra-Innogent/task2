@@ -15,8 +15,7 @@ import java.util.stream.Collectors;
 @Transactional
 public class LibraryServiceImpl implements LibraryService {
 
-    @Autowired
-    private AuthorRepository authorRepo;
+    
 
     @Autowired
     private BookRepository bookRepo;
@@ -24,60 +23,6 @@ public class LibraryServiceImpl implements LibraryService {
     @Autowired
     private MemberRepository memberRepo;
 
-    @Override
-    public AuthorResponse addAuthor(AuthorRequest request) {
-        Author author = new Author();
-        author.setName(request.getName());
-        author.setBooks(new ArrayList<>()); // initialize empty list
-        authorRepo.save(author);
-
-        AuthorResponse response = new AuthorResponse();
-        response.setId(author.getId());
-        response.setName(author.getName());
-        response.setBookTitles(new ArrayList<>());
-        return response;
-    }
-
-    @Override
-    public BookResponse addBook(BookRequest request) {
-        Author author = authorRepo.findById(request.getAuthorId())
-                .orElseThrow(() -> new RuntimeException("Author not found"));
-
-        Book book = new Book();
-        book.setTitle(request.getTitle());
-        book.setStock(request.getStock());
-        book.setAuthor(author);
-        bookRepo.save(book);
-
-        
-        List<Book> authorBooks = author.getBooks();
-        authorBooks.add(book);
-        author.setBooks(authorBooks);
-        authorRepo.save(author);
-
-        BookResponse response = new BookResponse();
-        response.setId(book.getId());
-        response.setTitle(book.getTitle());
-        response.setStock(book.getStock());
-        response.setAuthorName(author.getName());
-        return response;
-    }
-
-    @Override
-    public MemberResponse addMember(MemberRequest request) {
-        Member member = new Member();
-        member.setName(request.getName());
-        member.setEmail(request.getEmail());
-        member.setBorrowedBooks(new HashSet<>()); // initialize borrowed books
-        memberRepo.save(member);
-
-        MemberResponse response = new MemberResponse();
-        response.setId(member.getId());
-        response.setName(member.getName());
-        response.setEmail(member.getEmail());
-        response.setBorrowedBookTitles(new ArrayList<>());
-        return response;
-    }
 
     @Override
     public MemberResponse borrowBook(Long memberId, Long bookId) {

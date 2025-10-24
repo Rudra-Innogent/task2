@@ -4,7 +4,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BookRequest {
-    private String title;
+   
+	private String title;
     private Long authorId;
     private int stock;
     
